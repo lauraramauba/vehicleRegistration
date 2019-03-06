@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+@keyframes sectionSlide {
+  0% {
+    -webkit-transform: translate3d(0, 150%, 0);
+    transform: translate3d(0, 150%, 0);
+    opacity: 0; }
+  50% {
+    opacity: 0.4; }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1; } }
+@keyframes carSlide {
+  0%, 50% {
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1; } }
+@keyframes carArribe {
+  0%, 50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.hide {
+  display: none; }
+
+body {
+  background-color: #333533;
+  font-family: 'Roboto', sans-serif; }
+  body h1 {
+    color: #E8EDDF;
+    margin: 4% 5% 3% 10%;
+    font-size: 2.5rem; }
+  body p {
+    color: #E8EDDF;
+    margin-left: 10%;
+    margin-bottom: 1%;
+    font-size: 1.2rem;
+    font-weight: 300; }
+  body form {
+    text-align: center; }
+    body form fieldset, body form input {
+      display: inline-block; }
+  body fieldset {
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 2%; }
+    body fieldset div {
+      display: inline-block;
+      margin: 20px 20px; }
+      body fieldset div #plate-validation {
+        display: block;
+        text-align: left;
+        margin-bottom: 10px; }
+      body fieldset div label {
+        color: #F5CB5C;
+        font-size: 1.2rem; }
+      body fieldset div input {
+        border-radius: 5px;
+        border: none;
+        padding: 7px; }
+  body input[type="button"] {
+    border: none;
+    background-color: #F5CB5C;
+    padding: 6px;
+    font-size: 1.1rem;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 20px 15px;
+    color: #242423; }
+  body section {
+    background-color: #242423;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding: 2% 0;
+    animation: sectionSlide 0.8s; }
+    body section #all-car-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly; }
+      body section #all-car-details #car-info-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; }
+        body section #all-car-details #car-info-container #carInfo {
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+          margin: 1% 0 0 1%; }
+        body section #all-car-details #car-info-container #car-side {
+          width: 60%;
+          animation: carSlide 1s; }
+      body section #all-car-details #car-wheels-container {
+        display: flex;
+        text-align: center; }
+        body section #all-car-details #car-wheels-container img {
+          width: 60%;
+          animation: carArribe 1s;
+          margin-bottom: 5px; }
+        body section #all-car-details #car-wheels-container p {
+          margin: 5px;
+          text-align: left; }
+    body section form fieldset {
+      display: flex;
+      flex-direction: column;
+      text-align: left; }
+      body section form fieldset legend {
+        color: #E8EDDF;
+        font-size: 1.2rem;
+        font-weight: 300; }
+      body section form fieldset #front-wheels, body section form fieldset #back-wheels {
+        margin: 0; }
+        body section form fieldset #front-wheels div label, body section form fieldset #front-wheels div input, body section form fieldset #front-wheels div p, body section form fieldset #back-wheels div label, body section form fieldset #back-wheels div input, body section form fieldset #back-wheels div p {
+          display: block;
+          margin-right: 50px;
+          padding: 4px; }
+        body section form fieldset #front-wheels div input, body section form fieldset #back-wheels div input {
+          width: 100%; }
+        body section form fieldset #front-wheels div p, body section form fieldset #front-wheels div label, body section form fieldset #back-wheels div p, body section form fieldset #back-wheels div label {
+          text-align: left;
+          margin: 5px 0 10px 0; }
+    body section form input[type="button"] {
+      display: block;
+      margin: 0px 25px;
+      color: #242423; }
+
+#car-alert, #wheels-alert {
+  font-size: 1rem;
+  color: #F5CB5C;
+  margin-left: 10px; }
+
+#diameter-alert, #plate-validation {
+  font-size: 1rem;
+  color: red; }
+
+span {
+  color: #F5CB5C; }
+
+@media (min-width: 768px) and (max-width: 979px) {
+  body #car-form fieldset div {
+    display: inline-block;
+    margin: 5px 5px; }
+    body #car-form fieldset div input {
+      width: 60%; }
+
+  #car-form input[type="button"] {
+    display: block;
+    margin: 0 auto; }
+
+  #car-info-container {
+    margin: 15px; }
+
+  #car-wheels-container {
+    margin: 15px; }
+
+  body form {
+    margin: 15px; }
+    body form fieldset #front-wheels div, body form fieldset #back-wheels div {
+      width: 36%;
+      margin: 10px; }
+      body form fieldset #front-wheels div input[type="number"], body form fieldset #front-wheels div input[type="text"], body form fieldset #back-wheels div input[type="number"], body form fieldset #back-wheels div input[type="text"] {
+        width: 100%; } }
+@media (max-width: 767px) {
+  body #car-form {
+    padding-bottom: 20px; }
+    body #car-form fieldset div {
+      display: block; }
+    body #car-form input[type="button"] {
+      display: block;
+      margin: 0 auto; }
+
+  body section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center; }
+    body section #car-info-container {
+      margin: 15px; }
+    body section #car-wheels-container {
+      margin: 15px; }
+    body section form {
+      margin: 15px; }
+      body section form fieldset {
+        justify-content: center;
+        align-items: center;
+        align-content: center; }
+      body section form fieldset #front-wheels div, body section form fieldset #back-wheels div {
+        width: 40%;
+        margin: 10px; }
+        body section form fieldset #front-wheels div input[type="number"], body section form fieldset #front-wheels div input[type="text"], body section form fieldset #back-wheels div input[type="number"], body section form fieldset #back-wheels div input[type="text"] {
+          width: 100%; } }
+
+/*# sourceMappingURL=styles.css.map */

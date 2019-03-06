@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="img/car-icon.png"/>
+    <title>Register your vehicle</title>
+</head>
+<body>
+    <h1>Register Your Vehicle</h1>
+
+    <p>Fill all the following fields: <span id="car-alert"></span></p>
+
+    <form id="car-form" name="car-form">
+
+        <fieldset>
+
+            <div>
+                <span id="plate-validation"></span>
+                <label for="plate">Plate:</label>
+                <input type="text" id="plate" name="plate" required>
+            </div>
+
+            <div>
+                <label for="brand">Brand:</label>
+                <input type="text" id="brand" name="brand" required>
+            </div>
+
+            <div>
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color" required>
+            </div>
+
+        </fieldset>
+
+        <input type="button" id="submit-info" value="Submit"></input>
+
+    </form>
+
+    <section id="car-section" class="hide">
+
+        <div id="all-car-details">
+
+            <div id="car-info-container">
+
+                <p id="carInfo"></p>
+
+                <img id="car-side" src="img/car-side.svg" alt="Side of a yellow car">
+            
+            </div>
+
+            <div id="car-wheels-container">
+
+                <div>
+                    <img src="img/car-front.svg" alt="Front of a yellow car">
+                    <p>Front wheels:</p>
+                    <p>Left:<span id="front-car-wheels-left"></span></p>
+                    <p>Right:<span id="front-car-wheels-right"></span></p>
+                </div>
+                
+                <div>
+                    <img src="img/car-back.svg" alt="Back of a yellow car">
+                    <p>Back wheels:</p>
+                    <p>Left:<span id="back-car-wheels-left"></span></p>
+                    <p>Right:<span id="back-car-wheels-right"></span></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <form id="wheels-form" name="wheels-form">
+
+            <fieldset>
+
+                <legend>Add your car's wheels: <span id="wheels-alert"></span></legend>
+                <span id="diameter-alert"></span>
+                <div id="front-wheels">
+
+                    <div>
+                        <p>Front left:</p>
+                        <label for="diameter-front-left">Diameter:</label>
+                        <input type="number" id="diameter-front-left" name="diameter-front-left" min="0.4" max="2" required>
+
+                        <label for="brand-front-left">Brand:</label>
+                        <input type="text" id="brand-front-left" name="brand-front-left" required>
+                    </div>
+
+                    <div>
+                        <p>Front right:</p>
+                        <label for="diameter-front-right">Diameter:</label>
+                        <input type="number" id="diameter-front-right" name="diameter-front-right" min="0.4" max="2" required>
+    
+                        <label for="brand-front-right">Brand:</label>
+                        <input type="text" id="brand-front-right" name="brand-front-right" required>
+                    </div>
+
+                </div>
+
+                <div id="back-wheels">
+
+                        <div>
+                            <p>Back left:</p>
+                            <label for="diameter-back-left">Diameter:</label>
+                            <input type="number" id="diameter-back-left" name="diameter-back-left" min="0.4" max="2" required>
+    
+                            <label for="brand-back-left">Brand:</label>
+                            <input type="text" id="brand-back-left" name="brand-back-left" required>
+                        </div>
+    
+                        <div>
+                            <p>Back right:</p>
+                            <label for="diameter-back-right">Diameter:</label>
+                            <input type="number" id="diameter-back-right" name="diameter-back-right" min="0.4" max="2" required>
+        
+                            <label for="brand-back-right">Brand:</label>
+                            <input type="text" id="brand-back-right" name="brand-back-right" required>
+                        </div>
+    
+                    </div>
+
+            </fieldset>
+
+            <input type="button" id="submit-wheels" value="Submit"></input>
+
+        </form>
+
+    </section>
+
+    <script src="../models/car.js"></script>
+    <script src="../models/wheel.js"></script>
+    <script src="../controllers/controller.js"></script>
+</body>
+</html>
