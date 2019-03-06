@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$bgColor: #333533;
+$primaryColor: #E8EDDF;
+$secondaryColor: #F5CB5C;
+$blackText: #242423;
+
+@keyframes sectionSlide {
+    0% {
+        -webkit-transform: translate3d(0, 150%, 0);
+        transform: translate3d(0, 150%, 0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes carSlide {
+    0%, 50% {
+        -webkit-transform: translate3d(50%, 0, 0);
+        transform: translate3d(50%, 0, 0);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes carArribe {
+    0%, 50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+body {
+    background-color: $bgColor;
+    font-family: 'Roboto', sans-serif;
+
+    h1 {
+        color: $primaryColor;
+        margin: 4% 5% 3% 10%;
+        font-size: 2.5rem;
+    }
+
+    p {
+        color: $primaryColor;
+        margin-left: 10%;
+        margin-bottom: 1%;
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    form {
+        text-align: center;
+
+        fieldset, input {
+            display: inline-block;
+        }
+    }
+
+    fieldset {
+        border: none;
+        margin-top: 15px;
+        margin-bottom: 2%;
+
+        div {
+            display: inline-block;
+            margin: 20px 20px;
+            
+            #plate-validation {
+                display: block;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+
+            label {
+                color: $secondaryColor;
+                font-size: 1.2rem;
+            }
+
+            input {
+                border-radius: 5px;
+                border: none;
+                padding: 7px;
+            }
+        }
+    }
+
+    input[type="button"] {
+        border: none;
+        background-color: $secondaryColor;
+        padding: 6px;
+        font-size: 1.1rem;
+        border-radius: 3px;
+        display: inline-block;
+        margin: 20px 15px;
+        color: $blackText;
+    }
+
+    section {
+        background-color: $blackText;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        padding: 2% 0;
+        animation: sectionSlide 0.8s;
+
+        #all-car-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            #car-info-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                #carInfo {
+                    font-size: 1.2rem;
+                    line-height: 1.8rem;     
+                    margin: 1% 0 0 1%;
+                }
+
+                #car-side {
+                    width: 60%;
+                    animation: carSlide 1s;
+                }
+            }
+
+            #car-wheels-container {
+                display: flex;
+                text-align: center;
+                
+                img {
+                    width: 60%;
+                    animation: carArribe 1s;
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    margin: 5px;
+                    text-align: left;
+                }
+            }
+        }
+
+        form {
+
+            fieldset {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+
+                legend {
+                    color: $primaryColor;
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                }
+
+                #front-wheels, #back-wheels {
+                    margin: 0;
+
+                    div label, div input, div p {
+                        display: block;
+                        margin-right: 50px;
+                        padding: 4px;
+                    }
+
+                    div input {
+                        width: 100%;
+                    }
+
+                    div p, div label {
+                        text-align: left;
+                        margin: 5px 0 10px 0;
+                    }
+                }
+            }
+
+            input[type="button"] {
+                display: block;
+                margin: 0px 25px;
+                color: $blackText;
+            }
+        }
+    }
+}
+
+#car-alert, #wheels-alert {
+    font-size: 1rem;
+    color: $secondaryColor;
+    margin-left: 10px;
+}
+
+#diameter-alert, #plate-validation {
+    font-size: 1rem;
+    color: red;
+}
+
+span {
+    color: $secondaryColor;
+}
+
+@media (min-width: 768px) and (max-width:979px) {
+    body #car-form fieldset div{
+        display: inline-block;
+        margin: 5px 5px;
+        
+        input {
+            width: 60%;
+        }
+    }
+
+    #car-form input[type="button"] {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #car-info-container {
+        margin: 15px;
+    }
+
+    #car-wheels-container {
+        margin: 15px;
+    }
+
+    body form {
+        margin:15px;
+
+        fieldset #front-wheels div, fieldset #back-wheels div{
+            width: 36%;
+            margin: 10px;
+    
+            input[type="number"], input[type="text"] {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    body #car-form {
+        padding-bottom: 20px;
+
+        fieldset div{
+            display: block;
+        }
+
+        input[type="button"] {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    body section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+ 
+ 
+        #car-info-container {
+            margin: 15px;
+        }
+ 
+        #car-wheels-container {
+            margin: 15px;
+        }
+ 
+        form {
+            margin: 15px;
+ 
+            fieldset {
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+            }
+ 
+            fieldset #front-wheels div, fieldset #back-wheels div{
+                width: 40%;
+                margin: 10px;
+ 
+                input[type="number"], input[type="text"] {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+}
